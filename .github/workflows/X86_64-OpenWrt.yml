@@ -100,15 +100,6 @@ jobs:
       run: |
         cd $OPENWRT_PATH
         ./scripts/feeds update -a
-
-        # --- Fix missing Rust support for SmartDNS ---
-        if [ ! -f "feeds/packages/lang/rust/rust-package.mk" ]; then
-          echo "Rust feed not found. Trying to fetch from OpenWrt packages repo..."
-          ./scripts/feeds update packages
-          ./scripts/feeds install rust || true
-        fi
-        # ---------------------------------------------
-        
         ./scripts/feeds install -a
 
     - name: Load Custom Configuration
