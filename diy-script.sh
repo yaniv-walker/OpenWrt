@@ -30,9 +30,9 @@ function git_sparse_clone() {
 }
 
 # 下载缺失的 rust 构建文件
-mkdir -p package/lang/rust
-curl -L https://raw.githubusercontent.com/immortalwrt/packages/master/lang/rust/rust-package.mk \
-  -o package/lang/rust/rust-package.mk
+#mkdir -p package/lang/rust
+#curl -L https://raw.githubusercontent.com/immortalwrt/packages/master/lang/rust/rust-package.mk \
+#  -o package/lang/rust/rust-package.mk
 
 # 添加额外插件
 git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
